@@ -1,4 +1,5 @@
-# Hackintosh v3
+# Catalina 10.15.x + Gigabyte Z390 Aorus Pro WiFi + 9900KS + 5700XT
+# Credited to https://github.com/shiruken/hackintosh 
 Installation guide for my vanilla Hackintosh v3 build dual-booting macOS Catalina and Windows 10. The version numbers reported in this guide were the releases available at the time of installation and more than likely can be replaced with the latest iteration.
 
 * [`EFI`](EFI/): Copy of current EFI directory from the macOS boot drive
