@@ -35,20 +35,23 @@ Installation guide for my vanilla Hackintosh v3 build dual-booting macOS Catalin
 
 ## The Build
 
-* **CPU:** Intel Core i7-9700K
-* **CPU Cooler:** Corsair H100i PRO (Connected to CPU_FAN and F_USB2)
+* **CPU:** Intel Core i7-9900KS Special Edition
+* **CPU Cooler:** Corsair H100i RGB PLATINUM (Connected to CPU_FAN and F_USB2)
 * **Motherboard:** Gigabyte Z390 AORUS PRO WIFI
-* **Memory:** Corsair Vengeance RGB Pro 16 GB DDR4-3600
-* **Storage (macOS):** Samsung 970 Evo 1 TB M.2 NVME SSD (M2A Slot)
-* **Storage (Windows):** Intel 660p Series 1 TB M.2 NVME SSD (M2M Slot)
-* **Video Card:** Gigabyte Radeon RX 5700 XT 8 GB GAMING OC
-* **Power Supply:** Corsair RM650 80+ Gold
-* **Case:** NZXT H510
-* **Monitor:** Dell S2719DGF 27" LED QHD FreeSync Monitor
-* **Keyboard:** Das Keyboard Model S Professional
-* **Mouse:** Logitech G603
+* **Memory:** 2 x Corsair Vengeance RGB Pro 16 GB DDR4-3200
+* **Storage (macOS):** PNY XLR8 CS3030 2 TB M.2 NVME SSD (M2M Slot)
+* **Storage (Windows):** PNY XLR8 CS3030 2 TB M.2 NVME SSD (M2A Slot)
+* **Video Card:** Sapphire 5700 XT Nitro+ Special Edition
+* **Sound Card:** Sound BlasterX G1
+* **Webcam + Mic:** Logitech BRIO
+* **Wireless Card:** Fenvi T-919
+* **Power Supply:** Corsair RM1000x 80+ Gold
+* **Case:** LIAN LI PC-O11 Dynamic Razer Edition Black
+* **Monitor:** Dell S2719DG 27" LED QHD GSYNC Monitor
+* **Keyboard:** Logitech MX Keys Advanced Wireless
+* **Mouse:** Logitech MX Master 3 Wireless Mouse
 
-View the build on PCPartPicker: https://pcpartpicker.com/list/kBK7TC
+View the build on PCPartPicker: https://pcpartpicker.com/list/kBK7TC (Mismatched)
 
 ## Prepare Install Media
 
@@ -65,7 +68,7 @@ View the build on PCPartPicker: https://pcpartpicker.com/list/kBK7TC
 
 ## Install Clover
 
-* Download [Clover Install Package](https://github.com/Dids/clover-builder/releases) (v2.5k_r5097) and [Clover Configurator Global Edition](http://mackie100projects.altervista.org/download-clover-configurator/) (v5.7.0.0)
+* Download [Clover Install Package](https://github.com/Dids/clover-builder/releases) (v2.5k_r5103) and [Clover Configurator Global Edition](http://mackie100projects.altervista.org/download-clover-configurator/) (v5.9.1.0)
 * Install Clover to the USB device and customize with the following options:
   * Clover for UEFI booting only
   * Install Clover in the ESP
@@ -189,6 +192,8 @@ The Clover configuration for the installation is heavily based upon corpnewt's [
 1. Connect HDMI cable to the integrated graphics output on the motherboard
 2. Insert macOS Installer USB drive into the USB 3.0 port adjacent to Ethernet connector
 3. Connect keyboard and mouse to USB 2.0 ports
+4. Remove any other SSD and Drives from your computer
+5. Remove 5700XT (That seems to work for me and allowed me to boot into the OS)
 
 ![Installation Connections](Screenshots/Install_Ports.png)
 
@@ -211,9 +216,11 @@ The Clover configuration for the installation is heavily based upon corpnewt's [
 ### Make macOS Drive Bootable
 
 1. Mount the EFI partition of `Macintosh SSD` and copy over the entire EFI directory from the USB drive
-2. Restart the computer and select the internal drive (Samsung 970 Evo) as the default BIOS boot device
-3. Select `Boot macOS from Macintosh SSD` from the Clover menu
-4. You should now have a bootable macOS installation!
+2. Shutdown the computer 
+3. Install 5700XT and connect the Display Port to your monitor
+4. Boot up the bios setting and select the internal drive (PNY 2TB M2M SLOT) as the default BIOS boot device
+5. Select `Boot macOS from Macintosh SSD` from the Clover menu
+6. You should now have a bootable macOS installation!
 
 _Note: You can now remove the USB drive but keep it handy for debugging issues with your Hackintosh._
 
@@ -329,7 +336,7 @@ _Note: You should also make these changes to your USB drive Clover configuration
 
 ### Fix CPU Type in About This Mac
 
-For some reason, About This Mac and System Report do not properly identify the processor and list it as an 'Intel Core i9' instead of an 'Intel Core i7.' This can easily be fixed by using Clover Configurator to set the CPU Type to `0x0705` and rebooting.
+For some reason, If you are not using Core i9 and about This Mac and System Report do not properly identify as Intel Core i7 processor and list it as an 'Intel Core i9' instead of an 'Intel Core i7.' This can easily be fixed by using Clover Configurator to set the CPU Type to `0x0705` and rebooting.
 
 ![Before/After About This Mac](Screenshots/Post_CPUType.png)
 
