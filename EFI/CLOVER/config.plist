@@ -63,6 +63,16 @@
 					<key>Replace</key>
 					<data>RUgwMQ==</data>
 				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change EHC2 to EH02</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>RUhDMg==</data>
+					<key>Replace</key>
+					<data>RUgwMg==</data>
+				</dict>
 			</array>
 		</dict>
 		<key>DropTables</key>
@@ -99,11 +109,6 @@
 		<integer>3</integer>
 		<key>XMPDetection</key>
 		<string>Yes</string>
-	</dict>
-	<key>CPU</key>
-	<dict>
-		<key>Type</key>
-		<string>0x1005</string>
 	</dict>
 	<key>Devices</key>
 	<dict>
@@ -195,10 +200,12 @@
 		<string>10/09/2019</string>
 		<key>BiosVendor</key>
 		<string>Apple Inc.</string>
+		<key>BiosVersion</key>
+		<string>IM191.88Z.F000.B00.1910301745</string>
+		<key>Board-ID</key>
+		<string>Mac-AA95B1DDAB278B95</string>
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
-		<key>BoardSerialNumber</key>
-		<string>C02923300QXLNV9A8</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
@@ -210,7 +217,7 @@
 		<key>ChassisType</key>
 		<string>0x09</string>
 		<key>EfiVersion</key>
-		<string>1037.40.118.0.0</string>
+		<string>1037.60.50.0.0</string>
 		<key>Family</key>
 		<string>iMac</string>
 		<key>FirmwareFeatures</key>
@@ -227,10 +234,6 @@
 		<string>0x22</string>
 		<key>ProductName</key>
 		<string>iMac19,1</string>
-		<key>SerialNumber</key>
-		<string>C02YT2Z5JV3Q</string>
-		<key>SmUUID</key>
-		<string>B2A9FEC9-B633-4B97-AC54-C9E79EAFA7F1</string>
 		<key>Trust</key>
 		<true/>
 		<key>Version</key>
