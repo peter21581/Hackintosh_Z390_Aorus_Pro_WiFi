@@ -5,25 +5,25 @@
 	<key>ACPI</key>
 	<dict>
 		<key>AutoMerge</key>
-		<true/>
+		<false/>
 		<key>DSDT</key>
 		<dict>
 			<key>Fixes</key>
 			<dict>
 				<key>AddMCHC</key>
-				<false/>
-				<key>FixHPET</key>
-				<false/>
-				<key>FixIPIC</key>
-				<false/>
-				<key>FixRTC</key>
-				<false/>
-				<key>FixRegions</key>
 				<true/>
+				<key>FixHPET</key>
+				<true/>
+				<key>FixIPIC</key>
+				<true/>
+				<key>FixRTC</key>
+				<true/>
+				<key>FixRegions</key>
+				<false/>
 				<key>FixShutdown</key>
-				<false/>
+				<true/>
 				<key>FixTMR</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>Patches</key>
 			<array>
@@ -143,9 +143,9 @@
 		<key>FixHeaders</key>
 		<true/>
 		<key>FixMCFG</key>
-		<true/>
+		<false/>
 		<key>HaltEnabler</key>
-		<true/>
+		<false/>
 		<key>SSDT</key>
 		<dict>
 			<key>Generate</key>
@@ -154,21 +154,21 @@
 				<true/>
 			</dict>
 			<key>NoDynamicExtract</key>
-			<true/>
+			<false/>
 			<key>NoOemTableId</key>
-			<true/>
+			<false/>
 		</dict>
 	</dict>
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 darkwake=8 agdpmod=pikera shikigva=80</string>
+		<string>keepsyms=1 dart=0 slide=0 npci=0x2000 agdpmod=pikera shikigva=80</string>
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>NeverDoRecovery</key>
-		<true/>
+		<false/>
 		<key>NeverHibernate</key>
-		<true/>
+		<false/>
 		<key>Timeout</key>
 		<integer>3</integer>
 		<key>XMPDetection</key>
@@ -179,7 +179,7 @@
 		<key>Audio</key>
 		<dict>
 			<key>AFGLowPowerState</key>
-			<true/>
+			<false/>
 			<key>Inject</key>
 			<integer>1</integer>
 			<key>ResetHDA</key>
@@ -252,7 +252,7 @@
 		<key>AppleIntelCPUPM</key>
 		<false/>
 		<key>AppleRTC</key>
-		<true/>
+		<false/>
 		<key>KernelPm</key>
 		<true/>
 		<key>KextsToPatch</key>
@@ -273,7 +273,7 @@
 			</dict>
 		</array>
 		<key>PanicNoKextDump</key>
-		<true/>
+		<false/>
 	</dict>
 	<key>RtVariables</key>
 	<dict>
