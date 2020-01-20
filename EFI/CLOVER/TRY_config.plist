@@ -4,6 +4,8 @@
 <dict>
 	<key>ACPI</key>
 	<dict>
+		<key>AutoMerge</key>
+		<false/>
 		<key>DSDT</key>
 		<dict>
 			<key>Fixes</key>
@@ -16,6 +18,8 @@
 				<true/>
 				<key>FixRTC</key>
 				<true/>
+				<key>FixRegions</key>
+				<false/>
 				<key>FixShutdown</key>
 				<true/>
 				<key>FixTMR</key>
@@ -23,6 +27,66 @@
 			</dict>
 			<key>Patches</key>
 			<array>
+				<dict>
+					<key>Comment</key>
+					<string>GFX0 to IGPU</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>R0ZYMA==</data>
+					<key>Replace</key>
+					<data>SUdQVQ==</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>HDAS to HDEF</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>SERBUw==</data>
+					<key>Replace</key>
+					<data>SERFRg==</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>HECI to IMEI</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>SEVDSQ==</data>
+					<key>Replace</key>
+					<data>SU1FSQ==</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change SAT0 to SATA</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>U0FUMA==</data>
+					<key>Replace</key>
+					<data>U0FUQQ==</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>GLAN to GIGE</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>R0xBTg==</data>
+					<key>Replace</key>
+					<data>R0lHRQ==</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Fix bug SKL+</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>oAqTU1RBUwE=</data>
+					<key>Replace</key>
+					<data>oAqRCv8L//8=</data>
+				</dict>
 				<dict>
 					<key>Comment</key>
 					<string>change XHCI to XHC</string>
@@ -42,16 +106,6 @@
 					<data>WEhDMQ==</data>
 					<key>Replace</key>
 					<data>WEhDXw==</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change SAT0 to SATA</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>U0FUMA==</data>
-					<key>Replace</key>
-					<data>U0FUQQ==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -88,6 +142,8 @@
 		</array>
 		<key>FixHeaders</key>
 		<true/>
+		<key>FixMCFG</key>
+		<false/>
 		<key>HaltEnabler</key>
 		<false/>
 		<key>SSDT</key>
@@ -97,6 +153,10 @@
 				<key>PluginType</key>
 				<true/>
 			</dict>
+			<key>NoDynamicExtract</key>
+			<false/>
+			<key>NoOemTableId</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>Boot</key>
@@ -105,6 +165,10 @@
 		<string>keepsyms=1 dart=0 debug=0x100 slide=0 npci=0x2000 agdpmod=pikera shikigva=80</string>
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
+		<key>NeverDoRecovery</key>
+		<false/>
+		<key>NeverHibernate</key>
+		<false/>
 		<key>Timeout</key>
 		<integer>3</integer>
 		<key>XMPDetection</key>
@@ -141,12 +205,21 @@
 	</dict>
 	<key>GUI</key>
 	<dict>
+		<key>Hide</key>
+		<array>
+			<string>Recovery</string>
+			<string>Macintosh</string>
+		</array>
 		<key>KbdPrevLang</key>
 		<true/>
 		<key>Mouse</key>
 		<dict>
+			<key>DoubleClick</key>
+			<integer>500</integer>
 			<key>Enabled</key>
 			<true/>
+			<key>Speed</key>
+			<integer>8</integer>
 		</dict>
 		<key>Scan</key>
 		<dict>
@@ -178,6 +251,8 @@
 	<dict>
 		<key>AppleIntelCPUPM</key>
 		<false/>
+		<key>AppleRTC</key>
+		<false/>
 		<key>KernelPm</key>
 		<true/>
 		<key>KextsToPatch</key>
@@ -197,6 +272,8 @@
 				<data>SW50ZXJuYWw=</data>
 			</dict>
 		</array>
+		<key>PanicNoKextDump</key>
+		<false/>
 	</dict>
 	<key>RtVariables</key>
 	<dict>
