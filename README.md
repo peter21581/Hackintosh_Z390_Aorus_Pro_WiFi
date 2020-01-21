@@ -3,7 +3,6 @@
 Installation guide for my vanilla Hackintosh v3 build dual-booting macOS Catalina and Windows 10. The version numbers reported in this guide were the releases available at the time of installation and more than likely can be replaced with the latest iteration.
 
 * [`EFI`](EFI/): Copy of current EFI directory from the macOS boot drive
-* [`EFI_install`](EFI_install/): Copy of EFI directory from the USB drive used during macOS installation
 
 ![System Overview](Screenshots/System.png)
 
@@ -152,8 +151,8 @@ The Clover configuration for the installation is heavily based upon corpnewt's [
   <img src="Screenshots/Install_Clover_SystemParameters.png">
 </details>
 
-## BIOS Settings (Version F10)
-
+## BIOS Settings (Version F12c)
+* Do these or use  [`BIOS/MacOS Bios Ins`](BIOS/MacOS Bios Ins)
 * Save & Exit
   * **Load Optimized Defaults**
 * M.I.T.
