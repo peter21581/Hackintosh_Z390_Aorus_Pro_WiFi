@@ -43,7 +43,7 @@ Installation guide for my vanilla Hackintosh v3 build dual-booting macOS Catalin
 * **Video Card:** Sapphire 5700 XT Nitro+ Special Edition
 * **Sound Card:** Sound BlasterX G1
 * **Webcam + Mic:** Logitech BRIO
-* **Wireless Card:** Fenvi T-919
+* **Wireless Card:** Fenvi T-919 (Bluetooth connect to HS11)
 * **Power Supply:** Corsair RM1000x 80+ Gold
 * **Case:** LIAN LI PC-O11 Dynamic Razer Edition Black
 * **Monitor:** Dell S2719DG 27" LED QHD GSYNC Monitor
@@ -152,7 +152,8 @@ The Clover configuration for the installation is heavily based upon corpnewt's [
 </details>
 
 ## BIOS Settings (Version F12c)
-* Do these or use  [`BIOS/MacOS Bios Ins`](BIOS/MacOS Bios Ins)
+* [`BIOS/MacOS_Bios_Pre`](BIOS/MacOS_Bios_Pre): Load this BIOS settings or manually do BIOS Settings below
+
 * Save & Exit
   * **Load Optimized Defaults**
 * M.I.T.
@@ -167,7 +168,11 @@ The Clover configuration for the installation is heavily based upon corpnewt's [
   * CSM Support → **Disabled**
 * Peripherals
   * Initial Display Output → **IGFX**
-  * Intel Platform Trust Technology (PTT) → **Disabled**
+  * Internal Graphics → **Enabled**
+  * DVMT Pre-Allocated → **32M**
+  * DVMT Total Gfx Mem → **256M**
+  * Audio Controller → **Enabled** (I have disable in my case)
+  * Above 4G Decoding → **Enabled**
   * USB Configuration
     * Legacy USB Support → **Enabled**
     * XHCI Hand-off → **Enabled**
@@ -175,12 +180,9 @@ The Clover configuration for the installation is heavily based upon corpnewt's [
     * Network Stack → **Disabled**
 * Chipset
   * Vt-d → **Disabled**
-  * Internal Graphics → **Enabled**
-  * DVMT Pre-Allocated → **32M**
-  * DVMT Total Gfx Mem → **256M**
-  * Audio Controller → **Enabled**
-  * Above 4G Decoding → **Enabled**
+
 * Power
+  * Intel Platform Trust Technology (PTT) → **Disabled**
   * ErP → **Disabled**
   * RC6 (Render Standby) → **Enabled**
 * Save & Exit
@@ -188,11 +190,10 @@ The Clover configuration for the installation is heavily based upon corpnewt's [
 
 ## Prepare for macOS Installation
 
-1. Connect HDMI cable to the integrated graphics output on the motherboard
+1. Connect DisplayPort or HDMI cable to the graphics card output
 2. Insert macOS Installer USB drive into the USB 3.0 port adjacent to Ethernet connector
 3. Connect keyboard and mouse to USB 2.0 ports
 4. Remove any other SSD and Drives from your computer
-5. Remove 5700XT (That seems to work for me and allowed me to boot into the OS)
 
 ![Installation Connections](Screenshots/Install_Ports.png)
 
@@ -212,16 +213,19 @@ The Clover configuration for the installation is heavily based upon corpnewt's [
     
 ## Post Installation
 
+* [`BIOS/MacOS_Bios_Ins`](BIOS/MacOS_Bios_Ins): Load this BIOS settings
+
 ### Make macOS Drive Bootable
 
 1. Mount the EFI partition of `Macintosh SSD` and copy over the entire EFI directory from the USB drive
 2. Shutdown the computer 
-3. Install 5700XT and connect the Display Port to your monitor
-4. Boot up the bios setting and select the internal drive (PNY 2TB M2M SLOT) as the default BIOS boot device
-5. Select `Boot macOS from Macintosh SSD` from the Clover menu
-6. You should now have a bootable macOS installation!
+3. Boot up the bios setting and select the internal drive (PNY 2TB M2M SLOT) as the default BIOS boot device
+4. Select `Boot macOS from Macintosh SSD` from the Clover menu
+5. You should now have a bootable macOS installation!
 
 _Note: You can now remove the USB drive but keep it handy for debugging issues with your Hackintosh._
+
+## Side Note
 
 ### Enable the Discrete Graphics Card with Headless iGPU
 
