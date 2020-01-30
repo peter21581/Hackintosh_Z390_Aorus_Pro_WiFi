@@ -129,7 +129,7 @@
 		<key>Audio</key>
 		<dict>
 			<key>AFGLowPowerState</key>
-			<true/>
+			<false/>
 			<key>Inject</key>
 			<integer>1</integer>
 			<key>ResetHDA</key>
@@ -146,7 +146,7 @@
 		<key>USB</key>
 		<dict>
 			<key>AddClockID</key>
-			<true/>
+			<false/>
 			<key>FixOwnership</key>
 			<true/>
 			<key>HighCurrent</key>
@@ -235,7 +235,7 @@
 		<key>BooterConfig</key>
 		<string>0x28</string>
 		<key>CsrActiveConfig</key>
-		<string>0x067</string>
+		<string>0x67</string>
 		<key>MLB</key>
 		<string>C02943101J9LNV9AD</string>
 		<key>ROM</key>
