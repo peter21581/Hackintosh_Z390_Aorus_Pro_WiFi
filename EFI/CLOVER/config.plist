@@ -110,11 +110,11 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 slide=0 agdpmod=pikera shikigva=80</string>
+		<string>dart=0 agdpmod=pikera shikigva=80</string>
 		<key>DefaultLoader</key>
 		<string>boot.efi</string>
 		<key>DefaultVolume</key>
-		<string>Preboot</string>
+		<string>Macintosh HD</string>
 		<key>Legacy</key>
 		<string>PBR</string>
 		<key>NeverDoRecovery</key>
@@ -160,6 +160,8 @@
 		<key>Hide</key>
 		<array>
 			<string>Recovery</string>
+			<string>Microsoft</string>
+			<string>Preboot</string>
 		</array>
 		<key>KbdPrevLang</key>
 		<true/>
