@@ -1,10 +1,10 @@
-# Catalina 10.15.x + Gigabyte Z390 Aorus Pro WiFi + 9900KS + 5700XT
+# BigSur 11.1 + Gigabyte Z390 Aorus Pro WiFi + 9900KS + 5700XT
 # Credited to https://github.com/shiruken/hackintosh 
 Installation guide for my vanilla Hackintosh v3 build dual-booting macOS Catalina and Windows 10. The version numbers reported in this guide were the releases available at the time of installation and more than likely can be replaced with the latest iteration.
 
 * [`EFI`](EFI/): Copy of current EFI directory from the macOS boot drive
 
-![System Overview](Screenshots/System.png)
+![System Overview](Screenshots/bigsur_sys_.png)
 
 ## Table of Contents
 
@@ -54,31 +54,21 @@ View the build on PCPartPicker: https://pcpartpicker.com/list/kBK7TC (Mismatched
 
 ## Prepare Install Media
 
-1. Download the [macOS Catalina installer](https://apps.apple.com/us/app/macos-catalina/id1466841314?mt=12) (v10.15.1) from the Mac App Store
+1. Download the [macOS Catalina installer](https://apps.apple.com/us/app/macos-big-sur/id1526878132?mt=12) (v10.15.1) from the Mac App Store
 2. Open Terminal and format the target USB drive as with the following command:
 
     `diskutil partitionDisk /dev/{YOUR_DISK_ID} GPT JHFS+ "USB" 100%`
     
 3. [Create the bootable macOS installer](https://support.apple.com/sl-si/HT201372): 
 
-    `sudo /Applications/Install\ macOS\ Catalina.app/Contents/Resources/createinstallmedia --volume /Volumes/USB`
+    `sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
 
 4. Once the program finishes, your USB drive should now be called `Install macOS Catalina`
 
 ## Install Clover
 
-* Download [Clover Install Package](https://github.com/Dids/clover-builder/releases) (v2.5k_r5103) and [Clover Configurator Global Edition](http://mackie100projects.altervista.org/download-clover-configurator/) (v5.9.1.0)
-* Install Clover to the USB device and customize with the following options:
-  * Clover for UEFI booting only
-  * Install Clover in the ESP
-  * UEFI Drivers
-    * Recommended drivers
-      * ApfsDriverLoader
-      * HFSPlus
-    * Memory fix drivers
-      * OsxAptioFix3Drv
-    * Additional drivers
-      * EmuVariableUefi
+* Download [Opencore Install Package](https://dortania.github.io/OpenCore-Install-Guide/) (0.6.5) and [Opencore Configurator](https://mackie100projects.altervista.org/download-opencore-configurator/)
+* Install OpenCore to the USB device and customize with the EFI folder I have included.
  
 ## Gather Kexts
 
@@ -97,9 +87,9 @@ View the build on PCPartPicker: https://pcpartpicker.com/list/kBK7TC (Mismatched
 
 The exact kexts and drivers I used during my installation can be found in [`EFI_install/`](EFI_install/).
 
-## Configure Clover
+## Configure Config.plist
 
-The Clover configuration for the installation is heavily based upon corpnewt's [r/Hackintosh Vanilla Desktop Guide](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/) for the [Coffee Lake](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/config.plist-per-hardware/coffee-lake) microarchitecture. The major difference is with how the iGPU is enabled because I encountered difficulties when using device property injections. Each section of the configuration used during installation is documented below. A sanitized version of the config file can be found in [`EFI_install/CLOVER/`](EFI_install/CLOVER/). You will need to use Clover Configurator or [`macserial`](https://github.com/acidanthera/MacInfoPkg/releases) to generate a valid serial number and board serial number for the `iMac19,1`  SMBIOS.
+The configuration plist for the installation is heavily based upon [Dortania's OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/config.plist/coffee-lake.html) for the [Coffee Lake](https://dortania.github.io/OpenCore-Install-Guide/config.plist/coffee-lake.html) microarchitecture. The major difference is with how the iGPU is enabled because I encountered difficulties when using device property injections. Each section of the configuration used during installation is documented below. A sanitized version of the config file can be found in [`EFI_install/CLOVER/`](EFI_install/CLOVER/). You will need to use Clover Configurator or [`macserial`](https://github.com/acidanthera/MacInfoPkg/releases) to generate a valid serial number and board serial number for the `iMac19,1`  SMBIOS.
 
 <details><summary>ACPI</summary>
   <img src="Screenshots/Install_Clover_ACPI_1.png">
