@@ -4,7 +4,7 @@ Installation guide for my vanilla Hackintosh v3 build dual-booting macOS Catalin
 
 * [`EFI`](EFI/): Copy of current EFI directory from the macOS boot drive
 
-![System Overview](Screenshots/bigsur_sys_.png)
+![System Overview](Screenshots/bigsur_sys.png)
 
 ## Table of Contents
 
