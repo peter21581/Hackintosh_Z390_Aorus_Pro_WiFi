@@ -54,7 +54,7 @@ View the build on PCPartPicker: https://pcpartpicker.com/list/kBK7TC (Mismatched
 
 ## Prepare Install Media
 
-1. Download the [macOS Catalina installer](https://apps.apple.com/us/app/macos-big-sur/id1526878132?mt=12) (v10.15.1) from the Mac App Store
+1. Download the [macOS BigSur installer](https://apps.apple.com/us/app/macos-big-sur/id1526878132?mt=12) (v11.1) from the Mac App Store
 2. Open Terminal and format the target USB drive as with the following command:
 
     `diskutil partitionDisk /dev/{YOUR_DISK_ID} GPT JHFS+ "USB" 100%`
